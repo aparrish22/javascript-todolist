@@ -1,0 +1,106 @@
+#title-container {
+    margin: 75px auto;
+    border: 1em solid rgb(255, 54, 54);
+    width: 20%;
+    
+    padding: 10px 10px 10px 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#body-column {
+    border: 1em solid rgb(74, 74, 133);
+    margin: 10%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* min-width: 75%; */
+    box-sizing: border-box;
+}
+
+#body-column button {
+    padding: 10px; /* this limits buttons displayed on one line */
+    display: inline-block;
+    margin: 0 5px;
+}
+
+#tasks {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+    grid-gap: 60px; /* Gap between the tasks */
+    justify-items: center; /* Centers tasks within each column */
+    list-style: none;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* 
+    classes:
+        cancel-btn
+        task-list-item
+        display-title
+        display-desc
+*/
+
+.task-list-item {
+    margin: 10px;
+    padding: 15px; /* Added more padding inside each task box */
+    border: 0.5rem solid black;
+    border-radius: 25px;
+    background-color: beige;
+    width: 100%; /* Ensures task item fills its grid cell */
+    font-size: 1.1em; /* Slightly increased font size for better readability */
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: auto;
+    min-width: fit-content;
+}
+
+.task-button-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Prevents buttons from wrapping to the next line */
+    margin-top: 10px;
+    padding: 5px;
+    box-sizing: border-box; /* ensures padding is included in element's width */
+    overflow-x: auto; /* Enables horizontal scroll if the buttons don't fit */
+    /* gap: 0.5em; /* Space between the buttons */
+}
+
+.task-buttons {
+    flex-shrink: 0; /* Prevents buttons from shrinking */
+    white-space: nowrap; /* Ensures button text doesn't break */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 1100px) {
+    #tasks {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+    .task-button-container {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 768px) {
+    #tasks {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+    .task-button-container {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 700px) {
+    #tasks {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+    .task-button-container {
+        justify-content: space-around;
+    }
+}
