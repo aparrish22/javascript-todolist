@@ -1,75 +1,69 @@
-# ToDoList Application Documentation  
+# ToDoList Application Documentation
 
 ## Overview  
-This ToDoList application leverages the **DOM API**, **Web Storage API**, and **IndexedDB API** to store user tasks like a lightweight database. The goal is to provide functionality for creating, editing, and deleting tasks while ensuring data persistence.
+In this ToDoList Application, I will use the **DOM API**, **Web Storage API**, and **IndexedDB API** to save a user's notes like a database.  
+[www.jsdoc.app](https://www.jsdoc.app) is really good for documentation, comments, and defining types in this JavaScript app. I am currently applying **JSDoc** in this project for integrity and readability.  
 
-## Features  
-### Current Functionality:  
-- **Task Storage**:  
-  - Tasks are stored as key-value pairs in LocalStorage using a `Map()`.  
-    - **Key**: Unique task identifier (generated using `Date` + a random number).  
-    - **Value**: Task object containing the following properties:  
-      - `id`: Unique identifier.  
-      - `title`: Task title.  
-      - `desc`: Task description.  
-      - `date`: Task creation date.  
-
-- **Edit and Delete Tasks**:  
-  - Users can modify or remove tasks directly from the interface.  
-
-- **User Interface Updates**:  
-  - Stored tasks are displayed in a structured "notes" element for better readability.
-
-### Planned Features:  
-- **Filter By/Sort By**:  
-  - Add a sorting feature to organize tasks (e.g., by date or title).  
-- **Enhanced Task Details**:  
-  - Display the creation date in the UI.  
-  - Update the date field dynamically when editing tasks.  
-- **Cancel Edit Functionality**:  
-  - Ensure editing tasks has a cancel option to revert changes.
+I am reaching the limitations of LocalStorage. Using a database such as **IndexedDB** would help simplify unique identifiers for each task, enabling users to edit and delete tasks, and for admins to keep track of storage. LocalStorage only holds strings.
 
 ---
 
-## Development Notes  
+### Development Notes  
 
-### Aug 6th:  
-- Initial exploration of LocalStorage. Discovered its limitations in handling complex data types.  
-- Proposed the use of `Map()` to store task objects.  
+- **Aug 6th**:  
+  For this project, we will only store strings while trying to use `Map()`, I hope?  
 
-### Aug 7th:  
-- Successfully debugged `Map()` implementation with LocalStorage.  
+- **Aug 7th**:  
+  Easy pz. Needs debugging. Otherwise, using `Map()` and LocalStorage is going well.  
 
-### Aug 30th:  
-- Completed edit and delete task functionality.  
+- **Aug 6th**:  
+  We can store objects in LocalStorage.  
 
----
-
-## Challenges  
-- **LocalStorage Limitations**:  
-  - LocalStorage only supports strings, requiring tasks to be stringified.  
-  - IndexedDB would simplify handling unique identifiers and data relationships for future scalability.  
+- **Aug 30th**:  
+  Successfully implemented edit task and delete task functionality.  
 
 ---
 
-## Sources and References  
-- [Waiting for an element to exist with JavaScript](https://www.basedash.com/blog/waiting-for-an-element-to-exist-with-javascript)  
+### Features  
+- Project uses **LocalStorage** with `Map()` to store **Key (k) / Value (v)** pairs:  
+  - **Key**: Task's identifier.  
+  - **Value**: The task object.  
+
+**Example**:  
+The `saveTask` function saves a task to a map in LocalStorage with the structure: `(taskId, taskObject)`.  
+
+Each task object contains the following properties:  
+- `id`: Unique identifier.  
+- `title`: Task title.  
+- `desc`: Task description.  
+- `date`: Task creation date.  
+
+For creating unique identifiers, I use the `Date` with a random number.
+
+---
+
+### Sources  
+- [Waiting for an Element to Exist with JavaScript](https://www.basedash.com/blog/waiting-for-an-element-to-exist-with-javascript)  
 - [3 Typical Ways to Store Data Using JavaScript](https://dev.to/stevealila/3-typical-ways-to-store-data-using-javascript-1m1f)  
 - [LocalStorage in JavaScript: A Complete Guide](https://blog.logrocket.com/localstorage-javascript-complete-guide/#storing-setting-objects)  
 
 ---
 
-## Completed Tasks  
-- Display the "Create Task" element at the top of the interface.  
-- Bring stored tasks into the appropriate UI container.  
-- Add edit and delete buttons for each task.  
-- Implement unique task identifiers (replaced simple index identifiers).  
-- Add a `Date()` field when tasks are created.  
+### TODO Features  
+- Add Filter By / Sort By Feature (use a sort algorithm).  
+- Add HTML Element to display Date.  
+- Cancel button for editing task updates the date.
 
 ---
 
-## Tools Used  
-- **pomofocus.io**: For tracking development time and productivity.  
-- **JSDoc**: For enhancing project integrity and readability. (Reference: [www.jsdoc.app](https://jsdoc.app))  
+### Completed Features  
+- **Display Create Task Element to the Top**  
+- **HTML/CSS**: Bring stored tasks that are displayed on the UI into the proper "notes" element.  
+- **Add an Edit and Delete Button for Each Task** (Medium priority).  
+- **Create Unique Identifiers**: No more simple index 0 identifiers (Low priority).  
+- **Add a `Date()` When Task is Created** (Low priority).
 
+---
 
+### Productivity Tracker  
+Check [pomofocus.io](https://pomofocus.io) for time spent on this project.
