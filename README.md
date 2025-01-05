@@ -53,6 +53,7 @@ For creating unique identifiers, I use the `Date` with a random number.
 - Add Filter By / Sort By Feature (use a sort algorithm).  
 - Add HTML Element to display Date.  
 - Cancel button for editing task updates the date.
+- Add "Minimized" list view (user can click Task, opening mini view of Desc and Date).
 
 ---
 
