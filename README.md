@@ -1,7 +1,7 @@
 # ToDoList Application Documentation
 
 ## Overview  
-In this ToDoList Application, I will use the **DOM API**, **Web Storage API**, and **IndexedDB API** to save a user's notes like a database.  
+In this ToDoList Application, I use **DOM API**, **Web Storage API**, and **IndexedDB API** to save a user's notes like a database.  
 [www.jsdoc.app](https://www.jsdoc.app) is really good for documentation, comments, and defining types in this JavaScript app. I am currently applying **JSDoc** in this project for integrity and readability.  
 
 I am reaching the limitations of LocalStorage. Using a database such as **IndexedDB** would help simplify unique identifiers for each task, enabling users to edit and delete tasks, and for admins to keep track of storage. LocalStorage only holds strings.
